@@ -3,12 +3,12 @@
 这是一个基于 PyTorch 实现的 **单深度反事实遗憾最小化 (Single Deep CFR, SD-CFR)** 算法的原型机。本项目使用精简的 Leduc Hold'em Poker 作为环境，用于在本地快速验证算法的收敛性与代码管道的正确性，为后续扩展到大型限注德州扑克打下基础。
 
 ## Rules of Leduc Poker
-![Leduc poker rules](Leduc poker rules.png)
+![Leduc poker rules](Leduc_poker_rules.png)
 ## 核心算法特性
 
 本实现严格参考了 Eric Steinberger 的论文 _Single Deep Counterfactual Regret Minimization_
 
-[Single Deep Counterfactual Regret Minimization](Single Deep Counterfactual Regret Minimization.pdf)
+[Single Deep Counterfactual Regret Minimization](Single_Deep_CFR.pdf)
 
 并包含了以下工程级别的优化：
 
