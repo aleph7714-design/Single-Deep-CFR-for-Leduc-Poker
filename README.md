@@ -8,7 +8,11 @@
 
 ## 核心算法特性
 
-本实现严格参考了 Eric Steinberger 的论文 _Single Deep Counterfactual Regret Minimization_[paper](Single Deep Counterfactual Regret Minimization.pdf)，并包含了以下工程级别的优化：
+本实现严格参考了 Eric Steinberger 的论文 _Single Deep Counterfactual Regret Minimization_
+
+[paper](Single Deep Counterfactual Regret Minimization.pdf)
+
+并包含了以下工程级别的优化：
 
 1. **彻底摒弃平均策略网络**：通过保存价值网络（Value Networks）的历史迭代快照池 $B^M$，在实际推理和打牌时执行**轨迹采样 (Trajectory-sampling)** 来等效替代平均策略。
 2. **外部采样 (External Sampling)**：在博弈树遍历时，对手采取单一路径采样，自身采取全路径探索，大幅降低计算开销。
