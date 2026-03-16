@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 from env import LeducEnv
-from models import get_strategy_from_value_net
+from models import get_strategy_from_value_net, SD_CFR_ValueNetwork
 
 
 def sample_network_from_BM(B_M_player):
@@ -28,10 +28,17 @@ def play_one_hand(env, B_M_p0, B_M_p1):
     """
     使用抽样出的网络打一局完整的牌
     """
-    # 1. 游戏开始时，双方各自按照权重 t 从 B^M 中抽取一个网络
+    # 1. 游戏开始时，双方各自按照权重 t 从 B^M 中抽取一个网络参数字典
     # 这整局游戏都会固定使用这两个抽出来的网络
-    net_p0 = sample_network_from_BM(B_M_p0)
-    net_p1 = sample_network_from_BM(B_M_p1)
+    state_dict_p0 = sample_network_from_BM(B_M_p0)
+    state_dict_p1 = sample_network_from_BM(B_M_p1)
+
+    # 实例化网络并加载参数
+    net_p0 = SD_CFR_ValueNetwork()
+    net_p0.load_state_dict(state_dict_p0)
+
+    net_p1 = SD_CFR_ValueNetwork()
+    net_p1.load_state_dict(state_dict_p1)
 
     # 将网络设置为评估模式
     net_p0.eval()
