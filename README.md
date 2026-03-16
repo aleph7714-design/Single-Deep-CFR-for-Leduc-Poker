@@ -10,9 +10,9 @@
 
 [Single Deep Counterfactual Regret Minimization](Single_Deep_CFR.pdf)
 
-并包含了以下工程级别的优化：
+包含了以下优化：
 
-1. **彻底摒弃平均策略网络**：通过保存价值网络（Value Networks）的历史迭代快照池 $B^M$，在实际推理和打牌时执行**轨迹采样 (Trajectory-sampling)** 来等效替代平均策略。
+1. **抛弃平均策略网络**：通过保存价值网络（Value Networks）的历史迭代快照池 $B^M$，在实际推理和打牌时执行**轨迹采样 (Trajectory-sampling)** 来等效替代平均策略。
 2. **外部采样 (External Sampling)**：在博弈树遍历时，对手采取单一路径采样，自身采取全路径探索，大幅降低计算开销。
 3. **蓄水池采样 (Reservoir Buffer)**：保证经验回放池满载后，整体数据依然服从历史均匀分布。
 4. **梯度防爆的 Linear CFR**：在计算 MSE Loss 时，按照产生数据时的迭代轮次 $t$ 进行线性加权，并引入了 `Batch-Norm` 风格的加权归一化，解决了在 Adam 优化器下后期梯度爆炸的问题。
