@@ -4,13 +4,17 @@
 
 ## Rules of Leduc Poker
 
-![rules](Leduc poker rules.png)
+
+
+![Leduc poker rules](Leduc poker rules.png)
+
+
 
 ## 核心算法特性
 
 本实现严格参考了 Eric Steinberger 的论文 _Single Deep Counterfactual Regret Minimization_
 
-[paper](Single Deep Counterfactual Regret Minimization.pdf)
+[Single Deep Counterfactual Regret Minimization](Single Deep Counterfactual Regret Minimization.pdf)
 
 并包含了以下工程级别的优化：
 
