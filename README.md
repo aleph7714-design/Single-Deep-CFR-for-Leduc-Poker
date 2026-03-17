@@ -9,7 +9,8 @@ It uses a simplified **Leduc Hold'em Poker** environment to quickly validate alg
 
 ## Core Algorithm Features
 
-This implementation closely follows Eric Steinberger’s paper: _Single Deep Counterfactual Regret Minimization_arXiv:1901.07621
+This implementation closely follows Eric Steinberger’s paper: _Single Deep Counterfactual Regret Minimization_
+[![arXiv](https://img.shields.io/badge/arXiv-1901.07621-b31b1b.svg)](https://arxiv.org/abs/1901.07621)
 
 It also includes several optimizations:
 
